@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import "./qr.css";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Scan from "./pages/Scan";
