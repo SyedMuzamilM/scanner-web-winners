@@ -4,7 +4,8 @@ import "./qr.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Scan from "./pages/Scan";
+// import Scan from "./pages/Scan";
+import Scan from "./pages/Scan-test";
 import AdmitCard from "./pages/AdmitCard";
 
 function App() {

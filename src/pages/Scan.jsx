@@ -136,8 +136,8 @@ function Scan() {
               Or
             </p>
             <Scanner
-              onResult={(text, result) => console.log(text, result)}
-              onError={(error) => console.log(error?.message)}
+              onResult={(text, result) => console.log("scanned : ",text, result)}
+              onError={(error) => console.log("Error",error?.message)}
             />
             {/* {qrOn && (
               <div>
