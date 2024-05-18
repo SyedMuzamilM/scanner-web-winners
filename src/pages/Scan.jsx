@@ -93,7 +93,7 @@ function Scan() {
   return (
     <>
       <div className="bg-[#E31E24] py-[14px] px-[15px]">
-        <div className="bg-[#FFFFFF] rounded-[20px] max-w-[360px] h-[815px] flex flex-col justify-center items-center m-auto">
+        <div className="bg-[#FFFFFF] rounded-[20px] max-w-[360px] pb-[30px] flex flex-col justify-center items-center m-auto">
           <div className="flex items-center pb-[57px] justify-center">
             <img src="/assets/logo.svg" alt="" />
           </div>
