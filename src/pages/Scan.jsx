@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BaseUrl from "../config/BaseUrl";
 import QrReader from "react-qr-scanner";
+import { Scanner } from "@yudiel/react-qr-scanner";
 
 function Scan() {
   const [delay, setDelay] = useState(100);
@@ -134,13 +135,10 @@ function Scan() {
             <p className="py-[14px] font-[Lato] font-[500] text-[16px] leading-[22px] text-[#000000] text-center">
               Or
             </p>
-            <QrReader
-              delay={delay}
-              style={previewStyle}
-              onError={handleError}
-              onScan={handleScan}
+            <Scanner
+              onResult={(text, result) => console.log(text, result)}
+              onError={(error) => console.log(error?.message)}
             />
-            <p>{result}</p>
             {/* {qrOn && (
               <div>
                 <video ref={videoEl}></video>
