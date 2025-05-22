@@ -50,7 +50,7 @@ function Scan() {
 
     try {
       const response = await axios.get(
-        `${BaseUrl}api/admin/GetTestFormById/${formData.rollNumber}`
+        `${BaseUrl}api/admit-card/scan/${formData.rollNumber}`,
       );
       // const id = response?.data?.data?.user?._id;
       if (response?.data?.statusCode === 200) {
@@ -136,8 +136,10 @@ function Scan() {
               Or
             </p>
             <Scanner
-              onResult={(text, result) => console.log("scanned : ",text, result)}
-              onError={(error) => console.log("Error",error?.message)}
+              onResult={(text, result) =>
+                console.log("scanned : ", text, result)
+              }
+              onError={(error) => console.log("Error", error?.message)}
             />
             {/* {qrOn && (
               <div>

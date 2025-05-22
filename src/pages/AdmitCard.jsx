@@ -67,7 +67,7 @@ function AdmitCard() {
                         </p>
                       </div>
                       <div className="col-span-5">
-                        <p className="font-[Poppins]"> {data?.RollNumber}</p>
+                        <p className="font-[Poppins]"> {data?.rollNumber}</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-8 gap-[10px]">
@@ -101,7 +101,7 @@ function AdmitCard() {
                         <p className="font-[Poppins]"> {data?.DesiredTest}</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-8 gap-[10px]">
+                    {/* <div className="grid grid-cols-8 gap-[10px]">
                       <div className="col-span-3">
                         <p className="font-[Poppins]">
                           <strong>Download Time:</strong>
@@ -126,7 +126,7 @@ function AdmitCard() {
                           {data?.DownloadadmitCard ? "Yes" : "No"}
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="grid grid-cols-8 gap-[10px]">
                       <div className="col-span-3">
                         <p className="font-[Poppins]">
@@ -154,9 +154,9 @@ function AdmitCard() {
                           <strong>Address:</strong>
                         </p>
                       </div>
-                      <div className="col-span-5">
+                      {/* <div className="col-span-5">
                         <p className="font-[Poppins]"> {data?.Address}</p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
