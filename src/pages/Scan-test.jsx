@@ -11,12 +11,14 @@ function Scan() {
   const [formData, setFormData] = useState({
     rollNumber: "",
   });
+  const id = localStorage.getItem("loggedInId");
 
   const handleScanCode = async (data) => {
     if (data) {
       try {
-        const response = await axios.get(
+        const response = await axios.post(
           `${BaseUrl}api/admit-card/scan/${data}`,
+          { scannedBy: id },
         );
         if (response?.status === 200) {
           localStorage.setItem(
@@ -50,8 +52,9 @@ function Scan() {
     }
 
     try {
-      const response = await axios.get(
+      const response = await axios.post(
         `${BaseUrl}api/admit-card/scan/${rollNumber}`,
+        { scannedBy: id },
       );
       if (response?.status === 200) {
         localStorage.setItem("admitCard", JSON.stringify(response?.data?.data));
