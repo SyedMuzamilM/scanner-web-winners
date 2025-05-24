@@ -18,7 +18,7 @@ function Scan() {
         const response = await axios.get(
           `${BaseUrl}api/admit-card/scan/${data}`,
         );
-        if (response?.data?.statusCode === 200) {
+        if (response?.status === 200) {
           localStorage.setItem(
             "admitCard",
             JSON.stringify(response?.data?.data),
@@ -54,7 +54,6 @@ function Scan() {
         `${BaseUrl}api/admit-card/scan/${rollNumber}`,
       );
       if (response?.status === 200) {
-        console.log(response.data.data);
         localStorage.setItem("admitCard", JSON.stringify(response?.data?.data));
         navigate(`/admit-card`);
       }

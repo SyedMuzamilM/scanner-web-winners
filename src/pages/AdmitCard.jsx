@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 function AdmitCard() {
   const [showModal, setShowModal] = useState(false);
+  const [id, setId] = useState("");
   const navigate = useNavigate();
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const storedResponse = localStorage.getItem("admitCard");
+    const id = localStorage.getItem("loggedInId");
+    setId(id);
     if (storedResponse) {
       setData(JSON.parse(storedResponse));
     }
@@ -164,7 +167,10 @@ function AdmitCard() {
             )}
           </div>
           <div className="pt-[36px] flex items-center gap-[22px]">
-            <button className="flex w-full gap-[7px] items-center justify-center font-[Lato] font-[700] text-[16px] leading-[22.4px] bg-[#47DD00] rounded-[12px] py-[8px] text-[#FFFFFF]">
+            <button
+              onClick={() => navigate(`/scan/${id}`)}
+              className="flex w-full gap-[7px] items-center justify-center font-[Lato] font-[700] text-[16px] leading-[22.4px] bg-[#47DD00] rounded-[12px] py-[8px] text-[#FFFFFF]"
+            >
               <img src="assets/yes-alt.svg" alt="" />
               Approved
             </button>

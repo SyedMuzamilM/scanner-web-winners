@@ -26,9 +26,10 @@ function Home() {
     try {
       const response = await axios.post(
         `${BaseUrl}api/Scanner/ScannerTeamlogin`,
-        formData
+        formData,
       );
       const id = response?.data?.data?.user?._id;
+      localStorage.setItem("loggedInId", id);
       if (response?.data?.statusCode === 200) {
         navigate(`/scan/${id}`);
       }
